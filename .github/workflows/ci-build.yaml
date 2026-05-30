@@ -1,3 +1,7 @@
+# CI Build Workflow
+# This workflow automatically lints and tests the code on every push
+# and pull request targeting the main branch, ensuring code quality
+# and preventing broken code from being merged.
 name: CI Build
 on:
   push:
