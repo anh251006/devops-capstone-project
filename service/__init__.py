@@ -6,12 +6,16 @@ and SQL database
 """
 import sys
 from flask import Flask
+from flask_talisman import Talisman
+from flask_cors import CORS
 from service import config
 from service.common import log_handlers
 
 # Create Flask application
 app = Flask(__name__)
 app.config.from_object(config)
+talisman = Talisman(app)
+cors = CORS(app)
 
 # Import the routes After the Flask app is created
 # pylint: disable=wrong-import-position, cyclic-import, wrong-import-order
@@ -35,12 +39,3 @@ except Exception as error:  # pylint: disable=broad-except
     sys.exit(4)
 
 app.logger.info("Service initialized!")
-
-"""
-Package initialization
-"""
-
-from flask_talisman import Talisman        # import Talisman
-talisman = Talisman(app)                   # create Talisman instance
-
-from service import routes, models, error_handlers  # noqa: F401, E402
