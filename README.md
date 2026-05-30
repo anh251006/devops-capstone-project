@@ -1,6 +1,6 @@
 # DevOps Capstone Project
 
- ![Build Status](https://github.com/anh251006/devops-capstone-project/actions/workflows/ci-build.yaml/badge.svg)
+![Build Status](https://github.com/anh251006/devops-capstone-project/actions/workflows/ci-build.yaml/badge.svg)
 
 ## Overview
 This project is a DevOps Capstone assignment from the IBM DevOps and Software Engineering Professional Certificate. It demonstrates building, testing, and deploying a Python-based microservice using DevOps practices.
