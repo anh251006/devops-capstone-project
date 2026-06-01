@@ -148,7 +148,7 @@ class TestAccountService(TestCase):
         self.assertEqual(data["email"], new_account["email"])
         self.assertEqual(data["address"], new_account["address"])
         self.assertEqual(data["phone_number"], new_account["phone_number"])
-    
+
     def test_account_not_found(self):
         """It should return 404 for an Account that does not exist"""
         resp = self.client.get(
@@ -167,7 +167,7 @@ class TestAccountService(TestCase):
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
         data = resp.get_json()
         self.assertEqual(len(data), 5)
-    
+
     def test_list_accounts_empty(self):
         """It should return an empty list when no accounts exist"""
         resp = self.client.get(
@@ -177,7 +177,7 @@ class TestAccountService(TestCase):
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
         data = resp.get_json()
         self.assertEqual(data, [])
-    
+
     def test_update_an_account(self):
         """It should Update an existing Account"""
         account = self._create_accounts(1)[0]
@@ -200,7 +200,7 @@ class TestAccountService(TestCase):
             content_type="application/json"
         )
         self.assertEqual(resp.status_code, status.HTTP_404_NOT_FOUND)
-    
+
     def test_delete_an_account(self):
         """It should Delete an Account"""
         account = self._create_accounts(1)[0]
